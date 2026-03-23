@@ -1,0 +1,238 @@
+{
+  "theme": {
+    "mode": "light",
+    "colors": {
+      "primary": "#F42E7A",
+      "primaryLight": "#FF6AA3",
+      "primaryLighter": "#FFF6F8",
+      "accent": "#FFDEE8",
+      "background": "#FFFFFF",
+      "cardBackground": "#F7F7F7",
+      "text": "#363636",
+      "textSecondary": "#acacac",
+      "border": "rgba(0,0,0,0.06)",
+      "headerBackground": "#EBEBEB"
+    }
+  },
+  "darkTheme": {
+    "mode": "dark",
+    "colors": {
+      "primary": "#FFF6F8",
+      "primaryLight": "#FF6AA3",
+      "primaryLighter": "#FFDEE8",
+      "accent": "#F42E7A",
+      "background": "#000000",
+      "cardBackground": "#242424",
+      "text": "#ffffff",
+      "textSecondary": "#acacac",
+      "border": "rgba(255,255,255,0.08)",
+      "headerBackground": "#EBEBEB"
+    }
+  },
+  "font": {
+      "family": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans SC', sans-serif",
+      "monoFamily": "ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace",
+      "titleSize": "1rem",
+      "bodySize": "0.8rem"
+  }, 
+  "bento": {
+      "gap": 12,
+      "padding": 24,
+      "borderRadius": 24
+  },
+  "header": {
+    "title": "瓏窝 Dashboard",
+    "avatar": "",
+    "showDate": true,
+    "showThemeToggle": true,
+    "showSettings": true,
+    "showEditButton": true,
+    "editButtonText": "编辑组件"
+  },
+  "discord": {
+    "webhookUrl": ""
+  },
+  "grid": {
+    "desktop": { "columns": 7, "rows": 5 },
+    "mobile": { "columns": 4, "rows": 12 }
+  },
+  "widgets": [
+    {
+      "id": "fortune",
+      "type": "FortuneCard",
+      "title": "今日运势",
+      "desktop": { "x": 0, "y": 0, "w": 1, "h": 2 },
+      "mobile": { "x": 0, "y": 0, "w": 2, "h": 2 },
+      "config": {
+        "cardNumber": 3,
+        "cardName": "心三",
+        "fortune": "今日适宜，不适宜。。。"
+      }
+    },
+    {
+      "id": "main-image",
+      "type": "ImageCard",
+      "desktop": { "x": 1, "y": 0, "w": 3, "h": 2 },
+      "mobile": { "x": 0, "y": 2, "w": 4, "h": 2 },
+      "config": {
+        "src": "https://picsum.photos/seed/openclaw/600/400",
+        "alt": "每日图片",
+        "objectFit": "cover"
+      }
+    },
+    {
+      "id": "citation",
+      "type": "NumberCard",
+      "desktop": { "x": 4, "y": 0, "w": 1, "h": 1 },
+      "mobile": { "x": 2, "y": 0, "w": 2, "h": 1 },
+      "config": {
+        "number": 83,
+        "label": "citation",
+        "trend": { "value": 12, "direction": "up" },
+        "numberSize": "2.8rem"
+      }
+    },
+    {
+      "id": "projects",
+      "type": "ProgressCard",
+      "title": "项目进度",
+      "desktop": { "x": 5, "y": 0, "w": 2, "h": 1 },
+      "mobile": { "x": 2, "y": 1, "w": 2, "h": 1 },
+      "config": {
+        "items": [
+          { "label": "Canvas", "progress": 65, "statusText": "开发" },
+          { "label": "钩织", "progress": 20, "color": "#FF69B4", "statusText": "立项" },
+          { "label": "Prompt", "progress": 80, "color": "#FF1493", "statusText": "打包" },
+          { "label": "主题", "progress": 15, "statusText": "设计" }
+        ]
+      }
+    },
+    {
+      "id": "heatmap",
+      "type": "HeatmapCard",
+      "title": "工作时长热力图",
+      "desktop": { "x": 4, "y": 1, "w": 2, "h": 1 },
+      "mobile": { "x": 0, "y": 4, "w": 3, "h": 1 },
+      "config": {
+        "data": {
+          "2026-03-01": 3,
+          "2026-03-02": 2,
+          "2026-03-03": 4,
+          "2026-03-04": 1,
+          "2026-03-05": 3,
+          "2026-02-28": 2,
+          "2026-02-27": 4,
+          "2026-02-26": 1,
+          "2026-02-25": 3,
+          "2026-02-20": 2,
+          "2026-02-18": 4,
+          "2026-02-15": 1,
+          "2026-02-10": 2,
+          "2026-02-05": 3,
+          "2026-01-30": 1,
+          "2026-01-25": 4,
+          "2026-01-20": 2
+        },
+        "weeks": 16
+      }
+    },
+    {
+      "id": "inspiration",
+      "type": "TextCard",
+      "title": "灵感回顾",
+      "desktop": { "x": 6, "y": 1, "w": 1, "h": 1 },
+      "mobile": { "x": 3, "y": 4, "w": 1, "h": 1 },
+      "config": {
+        "content": "发布一个\nvs code主题",
+        "fontSize": "0.95rem",
+        "fontWeight": 700,
+        "textAlign": "center"
+      }
+    },
+    {
+      "id": "tasks",
+      "type": "TaskListCard",
+      "title": "任务安排",
+      "desktop": { "x": 0, "y": 2, "w": 2, "h": 1 },
+      "mobile": { "x": 0, "y": 5, "w": 2, "h": 1 },
+      "config": {
+        "tasks": [
+          { "text": "完成feature 3: xxxx", "time": "10:30", "status": "done" },
+          { "text": "完成", "time": "15:30", "status": "in-progress" },
+          { "text": "运动20分钟", "time": "18:30", "status": "pending" }
+        ],
+        "showProgress": true
+      }
+    },
+    {
+      "id": "calendar",
+      "type": "CalendarCard",
+      "desktop": { "x": 2, "y": 2, "w": 3, "h": 2 },
+      "mobile": { "x": 0, "y": 7, "w": 4, "h": 2 },
+      "config": {
+        "highlightDates": ["2026-03-05", "2026-03-10", "2026-03-15"],
+        "markerDates": {
+          "2026-03-08": "#FF1493",
+          "2026-03-20": "#4CAF50"
+        }
+      }
+    },
+    {
+      "id": "timeline",
+      "type": "TaskTimelineCard",
+      "title": "Lucy 工作安排",
+      "desktop": { "x": 5, "y": 2, "w": 2, "h": 3 },
+      "mobile": { "x": 0, "y": 9, "w": 4, "h": 2 },
+      "config": {
+        "items": [
+          { "time": "8:00", "text": "完成feature 3: xxxx", "status": "done" },
+          { "time": "9:00", "text": "完成", "status": "done" },
+          { "time": "", "text": "运动20分钟", "status": "done" },
+          { "time": "10:00", "text": "休闲", "status": "current" },
+          { "time": "13:00", "text": "吃甜点", "status": "pending" },
+          { "time": "15:00", "text": "调试代码", "status": "pending" },
+          { "time": "16:00", "text": "完成", "status": "pending" },
+          { "time": "17:00", "text": "完成feature 4 aaa", "status": "pending" },
+          { "time": "18:00", "text": "下班回家", "status": "pending" }
+        ]
+      }
+    },
+    {
+      "id": "results",
+      "type": "ResultListCard",
+      "title": "任务结果",
+      "desktop": { "x": 0, "y": 3, "w": 2, "h": 2 },
+      "mobile": { "x": 2, "y": 5, "w": 2, "h": 2 },
+      "config": {
+        "items": [
+          { "color": "#FF1493", "text": "自选股票报告", "timeAgo": "8分钟前" },
+          { "color": "#FF1493", "text": "今天新闻", "timeAgo": "12分钟前" },
+          { "color": "#FF1493", "text": "会议纪要", "timeAgo": "1小时前" },
+          { "color": "#FF1493", "text": "饮食卡路里计算", "timeAgo": "1天前" }
+        ]
+      }
+    },
+    {
+      "id": "broadcast",
+      "type": "BroadcastCard",
+      "title": "今日播报",
+      "desktop": { "x": 2, "y": 4, "w": 2, "h": 1 },
+      "mobile": { "x": 0, "y": 11, "w": 2, "h": 1 },
+      "config": {
+        "content": "今日播报 — Loong 的一段话，总结今天帮你干了什么、发现了什么、有什么建议",
+        "speaker": "Loong"
+      }
+    },
+    {
+      "id": "work-time",
+      "type": "TimeDisplayCard",
+      "title": "工作时长",
+      "desktop": { "x": 4, "y": 4, "w": 1, "h": 1 },
+      "mobile": { "x": 2, "y": 11, "w": 2, "h": 1 },
+      "config": {
+        "time": "02:24",
+        "subtitle": "「鼓励的话，今天棒棒」"
+      }
+    }
+  ]
+}

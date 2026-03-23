@@ -1,0 +1,115 @@
+@import "tailwindcss";
+
+/* ===================================
+   OpenClaw Dashboard — Tailwind v4
+   Map CSS variables to Tailwind theme
+   =================================== */
+
+@theme {
+  --color-primary: var(--color-primary);
+  --color-primary-light: var(--color-primary-light);
+  --color-primary-lighter: var(--color-primary-lighter);
+  --color-accent: var(--color-accent);
+  --color-bg: var(--color-bg);
+  --color-card-bg: var(--color-card-bg);
+  --color-text: var(--color-text);
+  --color-text-secondary: var(--color-text-secondary);
+  --color-border: var(--color-border);
+  --color-header-bg: var(--color-header-bg);
+  --font-family: var(--font-family);
+  --font-mono: var(--font-mono);
+}
+
+/* === CSS Variable defaults (overridden by ThemeContext at runtime) === */
+:root {
+  --color-primary: #F42E7A;
+  --color-primary-light: #FF6AA3;
+  --color-primary-lighter: #FFF6F8;
+  --color-accent: #FFDEE8;
+  --color-bg: #fff;
+  --color-card-bg: #F7F7F7;
+  --color-white: #FFFFFF;
+  --color-black: #000000;
+  --color-text: #363636;
+  --color-text-secondary: #acacac;
+  --color-border: rgba(0,0,0,0.06);
+  --color-header-bg: #EBEBEB;
+  --font-family: 'Noto Sans SC', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  --font-title-size: 1rem;
+  --font-body-size: 0.8rem;
+  --bento-gap: 12px;
+  --bento-padding: 24px;
+  --bento-radius: 24px;
+  --header-height: 48px;
+}
+
+/* === Base layer === */
+@layer base {
+  html, body {
+    @apply w-full h-full overflow-x-hidden;
+  }
+
+  body {
+    font-family: var(--font-family);
+    font-size: var(--font-body-size);
+    background: var(--color-bg);
+    color: var(--color-text);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    @apply leading-normal;
+  }
+
+  #root {
+    @apply w-full min-h-screen;
+  }
+
+  button {
+    font-family: inherit;
+  }
+
+  /* Hide scrollbar across all browsers */
+  * {
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE/Edge */
+  }
+  *::-webkit-scrollbar {
+    display: none; /* Chrome/Safari/Opera */
+  }
+
+  /* Selection */
+  ::selection {
+    background: var(--color-primary-lighter);
+    color: var(--color-primary);
+  }
+}
+
+/* === Widget hover effect === */
+@layer components {
+  .widget {
+    @apply transition-all duration-200 ease-in-out;
+  }
+  .widget:hover {
+    /* @apply -translate-y-px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06); */
+  }
+
+  /* Custom range slider thumb */
+  .range-primary::-webkit-slider-thumb {
+    background: var(--color-primary-light);
+  }
+  .range-primary::-moz-range-thumb {
+    background: var(--color-primary-light);
+  }
+}
+
+/* === Responsive === */
+@media (max-width: 768px) {
+  :root {
+    --bento-gap: 10px;
+    --bento-padding: 12px;
+    --bento-radius: 14px;
+    --header-height: 56px;
+  }
+}
+
